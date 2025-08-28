@@ -1,0 +1,16 @@
+{
+    "cookies": [
+        {
+            "id": 1,
+            "name": "Cooky",
+            "price": 1099,
+            "imgName": "chocolate-chip-cookie.png"
+        },
+        {
+            "id": 2,
+            "name": "C.Cooky",
+            "price": 1199,
+            "imgName": "chocolate-chip-cookie.png"
+        }
+    ]
+}

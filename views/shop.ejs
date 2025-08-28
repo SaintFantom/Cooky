@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Cooky's</title>
+
+    <script src="https://checkout.stripe.com/checkout.js" defer></script>
+    <script>
+        var stripePublicKey = "<%= stripePublicKey %>"
+    </script>
+    <script src="functions.js" defer></script>
+</head>
+<body>
+    <header>
+        
+        <div class="nav">
+            <h1>Cooky</h1>
+        </div>
+    </header>
+    
+    <section class="artwork">
+    <img src="images\Art.png" alt="clip art" class="art">
+    </section>
+
+    <section class="box">
+
+    <div class="menu">
+        <p style="font-size: 40px; padding-top: 10px;" id="cookyheader">Our cookys</p>
+        <div class="cookies">
+            <% items.cookies.forEach(function(item){ %>
+                <div class="shop-item" data-item-id = "<%= item.id %>"> 
+                    <img class="product-img" src="images\<%= item.imgName %>" alt="Cooky">
+                    <div class="title-and-price">
+                        <span class="product-title"><%= item.name %></span>
+                        <span class="product-price">$<%= item.price / 100 %></span>
+                    </div>
+                    <button class="btn btn-style shop-item-btn" role="button">Add to Cart</button> 
+                </div>
+            <% }) %>
+        </div>
+    </div>
+    <section class="cart">
+        <h1>cart</h1>
+        <div>
+
+            
+                <div class="cart-row">
+                    <span class="cart-item cart-header cart-collumn">Item</span>
+
+                    <span class="cart-price cart-header cart-collumn">Price</span>
+
+                    <span class="cart-quantity cart-header cart-collumn">Quantity</span>
+                </div>
+            <div class="cart-items">
+            </div>
+            
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">$0</span>
+            </div>
+            <div>
+                <button class="btn btn-style btn-purchase" role="button">Purchase</button>
+            </div>
+        </div>
+    </section>
+    </section>
+</body>
+</html>
