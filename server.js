@@ -15,7 +15,7 @@ app.set('view engine', 'ejs')
 app.use(express.json())
 app.use(express.static('public'))
 
-app.get('/shop', function(req, res) {
+app.get('', function(req, res) {
     fs.readFile('items.json', function(error, data) {
         if (error) {
             res.status(500).end()
